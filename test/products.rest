@@ -1,0 +1,33 @@
+
+@host=http://localhost:3000/products
+GET http://localhost:3000 HTTP/1.1
+###
+
+//pedir todo el array
+GET {{ host }} HTTP/1.1
+###
+
+//pedir cpn el id 8
+GET {{ host }}/8 HTTP/1.1
+###
+
+POST {{ host }} HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Procucto 1",
+    "price": "20.0"
+}
+###
+PATCH  {{ host }}/8 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Procucto B",
+    "price": "10.0"
+}
+###
+DELETE {{ host }}/8 HTTP/1.1
+
+
+
